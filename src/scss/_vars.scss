@@ -1,0 +1,27 @@
+// Spacing
+$spacing-xxs: 4px !default;
+$spacing-xs: 8px !default;
+$spacing-s: 12px !default;
+$spacing-m: 16px !default;
+$spacing-l: 24px !default;
+$spacing-xl: 40px !default;
+
+// Breakpoints
+$breakpoint-media-query-medium: screen and (min-width: 480px) !default;
+
+// Colors
+$color-black: black;
+$color-black--hover: rgba(0, 0, 0, .75);
+$color-white: white;
+$color-white--hover: rgba(255,255,255,.75);
+
+// Transitions
+$transition-standard: all 0.2s ease;
+
+// Vars
+$carousel-height: 70vh;
+
+
+// Border Radius
+$border-radius--standard: 2px;
+$border-radius--button: 20px;

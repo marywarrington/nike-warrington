@@ -1,17 +1,21 @@
+@import "../scss/vars";
+
 .slide {
-  width: 33%;
+  width: 100%;
   background-size: cover;
   position: relative;
-  height: 500px;
+  height: $carousel-height;
   &__info {
     position: absolute;
     bottom: 0;
     min-height: 100px;
     width: 100%;
-    background-color: white;
+    background-color: $color-black;
     opacity: 0.8;
-    padding: 0.5em;
+    padding: $spacing-m;
+    color: $color-white;
   }
+  // Creates the semi-transparent information overlay on each slide
   &__info:before {
     content: '';
     position: absolute;
@@ -19,23 +23,18 @@
     height: 2em;
     left: 0;
     z-index: 1;
-    background: linear-gradient(to top right, white calc(50% - 0.8px),transparent calc(50% + 0.8px));
+    background: linear-gradient(to top right, $color-black calc(50% - 0.8px),transparent calc(50% + 0.8px));
     top: 0;
     transform: translateY(-100%);
   }
-  &::after {
-    content: "";
-    height: 300px;
-    width: 80%;
-    position: absolute;
-    bottom: 0px;
-    left:10%;
-    box-shadow:0px 48px 96px rgba(25,30,55,0.03),
-    0px 24px 48px rgba(25,30,55,0.03),
-    0px 12px 24px rgba(25,30,55,0.03),
-    0px 6px 12px rgba(25,30,55,0.03),
-    0px 3px 6px rgba(25,30,55,0.03);
-    transition: box-shadow 0.3s ease;
-    z-index:-5;
+  &__desc {
+    margin-bottom: $spacing-xs;
+  }
+  &__author {
+    display: block;
+    margin-bottom: $spacing-m;
+    &:hover {
+      color: $color-white--hover;
+    }
   }
 }

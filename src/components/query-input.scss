@@ -1,0 +1,18 @@
+@import "../scss/vars";
+
+.query-input {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $spacing-m;
+  input[type="text"] {
+    border-radius: $border-radius--standard;
+    border: 1px solid $color-black;
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
+    margin: 0 $spacing-xs $spacing-xs 0;
+    &:focus {
+      outline: none;
+    }
+  }
+}

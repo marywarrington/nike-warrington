@@ -1,0 +1,12 @@
+@import "../scss/vars";
+
+.carousel {
+  .BrainhubCarousel__arrows {
+    height: $carousel-height;
+    background-color: $color-black;
+    transition: $transition-standard;
+    &:hover:enabled {
+      background-color: $color-black--hover;
+    }
+  }
+}

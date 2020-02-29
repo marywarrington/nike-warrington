@@ -1,0 +1,24 @@
+@import "../scss/vars";
+
+.button {
+  z-index: 10;
+  padding: $spacing-s $spacing-l;
+  border-radius: $border-radius--button;
+  font-size: $spacing-m;
+  cursor: pointer;
+  transition: $transition-standard;
+  &--light {
+    background: $color-white;
+    color: $color-black;
+    &:hover {
+      background: $color-white--hover;
+    }
+  }
+  &--dark {
+    background: $color-black;
+    color: $color-white;
+    &:hover {
+      background: $color-black--hover;
+    }
+  }
+}

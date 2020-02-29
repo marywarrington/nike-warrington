@@ -1,3 +1,5 @@
+@import "vars";
+
 html {
   box-sizing: border-box;
 }
@@ -12,11 +14,42 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.carousel {
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 0;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: $spacing-l;
+  margin-bottom: $spacing-l;
+  @media #{$breakpoint-media-query-medium} {
+    font-size: $spacing-xl;
+  }
+}
+h2 {
+  font-size: $spacing-m + $spacing-xs;
+  @media #{$breakpoint-media-query-medium} {
+    font-size: $spacing-l + $spacing-xs;
+  }
+  div + & {
+    margin-bottom: $spacing-m;
+  }
+}
+h3 {
+  font-size: $spacing-m + $spacing-xxs;
+  @media #{$breakpoint-media-query-medium} {
+    font-size: $spacing-l;
+  }
+}
+h4, h5, h6 {
+  font-size: $spacing-s;
+  @media #{$breakpoint-media-query-medium} {
+    font-size: $spacing-m;
+  }
 }
