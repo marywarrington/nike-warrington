@@ -62,6 +62,7 @@ export class App extends React.Component{
     return(
       <>
         <h1>Nike Image API App</h1>
+        <p>Enter your search term below, and press "submit" to see new images!</p>
         <QueryInput onSubmit={this.updateSearchParam} searchParam={searchParam}/>
         {images.length > 0 && !error ?
           (
