@@ -1,0 +1,28 @@
+.controls {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  input[type="text"] {
+    border-radius: 2px;
+    border-color: black;
+    border-width: 1px;
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  button {
+    background: black;
+    padding: 12px 28px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      background: rgba(0,0,0,.75);
+
+    }
+  }
+}
