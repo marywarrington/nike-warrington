@@ -39,8 +39,7 @@ export class App extends React.Component{
    * Uses current search param in state, as well as API key from env
    */
   getPhotos() {
-    /* NOTE: API key should not be handled like this, however, given the timeline and scope of this project (and the fact that I chose an API that required a key), I'm choosing to leave it here. I fully acknowledge this is not how I would do this normally. */
-    fetch(`https://api.unsplash.com/photos/random?count=10&query=${this.state.searchParam}&client_id=5rFSbHQe9VqXHk9zAYEpj_vZLe0IEVA7Ny22ShkaOJQ`, {method:'get'})
+    fetch(`https://api.unsplash.com/photos/random?count=10&query=${this.state.searchParam}&client_id=${process.env.UNSPLASH_KEY}`, {method:'get'})
       .then(res => res.json())
       .then(
         (result) => {
