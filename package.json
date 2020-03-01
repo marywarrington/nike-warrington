@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/marywarrington/nike-warrington",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -13,11 +12,8 @@
   "scripts": {
     "cypress:open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open",
-    "start": "build",
-    "build": "webpack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +32,6 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "cypress": "^4.1.0",
-    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0",
     "jsdoc": "^3.6.3",
     "node-sass": "^4.13.1",

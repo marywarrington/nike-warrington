@@ -25,6 +25,14 @@ export const SlideShow = (props) => {
   return <Carousel
     className="carousel"
     slidesPerPage={3}
+    breakpoints={{
+      700: {
+        slidesPerPage: 2,
+      },
+      500: {
+        slidesPerPage: 1,
+      }
+    }}
     arrows
     infinite>
       {slides}

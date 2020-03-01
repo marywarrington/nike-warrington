@@ -13,8 +13,9 @@ export const QueryInput = (props) => {
    * @param {object} e - Event Object.
    */
   const handleSubmit = (e) => {
+    const input = userInput ? userInput : '';
     e.preventDefault();
-    props.onSubmit(userInput);
+    props.onSubmit(input);
   };
 
   return (

@@ -26,7 +26,6 @@ export class App extends React.Component{
     this.setState({ searchParam: newParam}, this.getPhotos);
   }
 
-
   /**
    * Updates images on any subsequent render
    */
