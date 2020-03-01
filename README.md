@@ -9,7 +9,7 @@ For local development, run the following commands from the root of this project:
 
 `npm install`
 
-`npm start`
+`npm run dev`
 
 Open [localhost:8080](localhost:8080) in your browser.
 
