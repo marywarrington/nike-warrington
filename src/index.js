@@ -12,6 +12,7 @@ export class App extends React.Component{
       error: null,
       images: [],
       searchParam: 'nike',
+      loading: true,
     };
     this.updateSearchParam = this.updateSearchParam.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -22,7 +23,6 @@ export class App extends React.Component{
    * @param {string} newParam - The new search query.
    */
   updateSearchParam(newParam) {
-    // this.setState({ searchParam: newParam});
     this.setState({ searchParam: newParam}, this.getPhotos);
   }
 
@@ -40,28 +40,29 @@ export class App extends React.Component{
    */
   getPhotos() {
     fetch(`https://api.unsplash.com/photos/random?count=10&query=${this.state.searchParam}&client_id=${process.env.UNSPLASH_KEY}`, {method:'get'})
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            images: result
-          });
-        },
-        (error) => {
-          this.setState({
-            error
-          });
-        }
-      )
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          images: result,
+          loading: false
+        });
+      },
+      (error) => {
+        this.setState({
+          error
+        });
+      }
+    )
   }
 
   render(){
-    const { error, images, searchParam } = this.state;
+    const { error, images, searchParam, loading } = this.state;
 
     return(
       <>
         <h1>Nike Image API App</h1>
-        <p>Enter your search term below, and press "submit" to see new images!</p>
+        <p>Enter your search term below, and press "submit" to see new images! If no term is provided, random images will be selected.</p>
         <QueryInput onSubmit={this.updateSearchParam} searchParam={searchParam}/>
         {images.length > 0 && !error ?
           (
@@ -69,7 +70,8 @@ export class App extends React.Component{
             <h2 className='current-search'>Image results for search term "{searchParam}":</h2>
             <SlideShow images={images}/>
           </>
-          ) :
+          ) : loading ?
+          <p>One second please...</p> :
           <h2>Sorry, we can't find any images. Try another search term!</h2>
         }
       </>

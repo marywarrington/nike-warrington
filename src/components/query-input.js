@@ -25,7 +25,6 @@ export const QueryInput = (props) => {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
         />
-        <h1>{userInput}</h1>
         <Button theme="dark" onClick={handleSubmit}>Submit</Button>
       </form>
     </div>
